@@ -13,7 +13,7 @@ STR __str_const(const CHR* p) {
   strlcpy(STR_C(s), p, length + 1);
   return s;
 #else
-  return p;
+  return p-1;
 #endif
 }
 
