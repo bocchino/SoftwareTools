@@ -26,14 +26,10 @@ size_t str_index(STR str, CHR c) {
 }
 
 size_t str_length(STR str) {
-#ifdef BOUNDS_CHECK
-  return ARR_LEN(str);
-#else 
   size_t length;
   for (length = 0; STR_AT(str, length + 1) != EOS; ++length) {
     // skip
   }
   return length;
-#endif
 }
 
