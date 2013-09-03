@@ -6,6 +6,9 @@
 #include "str.h"
 #include <string.h>
 
+// ----------------------------------------------------------------------
+// __str_const: make a string from a CHR ptr
+// ----------------------------------------------------------------------
 STR __str_const(const CHR* p) {
 #ifdef BOUNDS_CHECK
   const size_t length = strlen(p);
