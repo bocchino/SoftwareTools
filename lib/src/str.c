@@ -7,9 +7,9 @@
 #include <string.h>
 
 // ----------------------------------------------------------------------
-// __str_const: make a string from a CHR ptr
+// __str_const: make a string from a char ptr
 // ----------------------------------------------------------------------
-STR __str_const(const CHR* p) {
+STR __str_const(const char* p) {
 #ifdef BOUNDS_CHECK
   const size_t length = strlen(p);
   STR s = STR_NEW(length);
@@ -20,7 +20,7 @@ STR __str_const(const CHR* p) {
 #endif
 }
 
-size_t str_index(STR str, CHR c) {
+size_t str_index(STR str, char c) {
   size_t index;
   for (index = 1; STR_AT(str, index) != EOS; ++index)
     if (STR_AT(str, index) == c)
