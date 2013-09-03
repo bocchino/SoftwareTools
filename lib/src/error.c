@@ -3,6 +3,7 @@
 // Error implementation
 // ----------------------------------------------------------------------
 
+#include <stdio.h>
 #include "error.h"
 #include "str.h"
 

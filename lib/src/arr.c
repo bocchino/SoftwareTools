@@ -19,7 +19,7 @@ void *__arr_new(size_t length, size_t tsize) {
 }
 
 #ifdef BOUNDS_CHECK
-void *__arr_at(const void *a, size_t i, size_t tsize) {
+void *__arr_at(void * const a, size_t i, size_t tsize) {
   size_t len = ARR_LEN(a);
   if (i == 0) error(STR_CONST("zero index not allowed"));
   if (i * tsize > len) error(STR_CONST("index too large"));

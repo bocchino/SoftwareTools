@@ -1,5 +1,7 @@
 #!/opt/local/bin/fish
 
+redo-ifchange ../params.fish ../functions.fish
+
 . ../params.fish
 . ../functions.fish
 
