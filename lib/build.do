@@ -1,7 +1,8 @@
 #!/opt/local/bin/fish
 
-redo-ifchange params.fish
+redo-ifchange ../params.fish params.fish
 
+. ../params.fish
 . params.fish
 
 if not test -e $BUILD

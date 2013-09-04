@@ -1,9 +1,10 @@
 #!/opt/local/bin/fish
 
-redo-ifchange ../params.fish ../functions.fish
+redo-ifchange ../../params.fish ../../functions.fish params.fish
 
-. ../params.fish
-. ../functions.fish
+. ../../params.fish
+. ../../functions.fish
+. params.fish
 
 echoerr 'building tests in '$BUILD
 

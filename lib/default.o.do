@@ -1,10 +1,11 @@
 #!/opt/local/bin/fish
 
+. ../params.fish
 . params.fish
 
 set base (basename -s '.o' $argv[1])
-set cfile {$SRC}/{$base}.c
-set dfile {$DEPEND}/{$base}.d
+set cfile $SRC/$base.c
+set dfile $DEPEND/$base.d
 
 redo-ifchange $cfile
 doecho $CC -MD -MF $dfile $CCFLAGS -I$INCLUDE $cfile -c -o $argv[3]

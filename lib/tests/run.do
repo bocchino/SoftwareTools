@@ -1,6 +1,6 @@
 #!/opt/local/bin/fish
 
-. ../functions.fish
+. ../../functions.fish
 
 set -g passed 0
 set -g failed 0

@@ -1,8 +1,9 @@
 #!/opt/local/bin/fish
 
+. ../params.fish
 . params.fish
 
-set OFILES {$BUILD}/*.o
+set OFILES $BUILD/*.o
 
 for file in $OFILES
   redo-ifchange $file
