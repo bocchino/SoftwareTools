@@ -6,6 +6,6 @@ redo build
 redo run
 
 set -gx BUILD debug
-set -gx CCFLAGS -std=c99 -DBOUNDS_CHECK
+set -gx CCFLAGS -std=c99 -DDEBUG
 redo build
 redo run
