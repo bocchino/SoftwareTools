@@ -1,2 +1,2 @@
-set SRC ./src
+set SRC src
 set CFILES $SRC/*.c
