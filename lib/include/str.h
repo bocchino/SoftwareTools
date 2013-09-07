@@ -15,26 +15,27 @@
 #define BLANK ' '
 #define EOS 0
 #define MINUS '-'
+#define NEWLINE '\n'
 #define TAB '\t'
 
 // ---------------------------------------------------------------------- 
 // index: find character c in string str
 // ---------------------------------------------------------------------- 
-size_t str_index(STR str, char c);
+size_t str_index(const STR str, const char c);
 
 // ---------------------------------------------------------------------- 
 // length: compute length of string 
 // ---------------------------------------------------------------------- 
-size_t str_length(STR str);
+size_t str_length(const STR str);
 
 // ---------------------------------------------------------------------- 
 // itoc: convert integer in to string in str 
 // ---------------------------------------------------------------------- 
-size_t str_itoc(int in, STR str, size_t size);
+size_t str_itoc(const int in, STR str, const size_t size);
 
 // ---------------------------------------------------------------------- 
 // ctoi: convert string at in[i] to integer, increment i
 // ---------------------------------------------------------------------- 
-int str_ctoi(STR in, size_t i);
+int str_ctoi(const STR in, size_t i);
 
 #endif
