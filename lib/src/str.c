@@ -10,14 +10,7 @@
 // __str_const: make a string from a char ptr
 // ----------------------------------------------------------------------
 STR __str_const(char* const p) {
-#ifdef DEBUG
-  const size_t length = strlen(p);
-  STR s = STR_NEW(length);
-  strlcpy(STR_C(s), p, length + 1);
-  return s;
-#else
   return p-1;
-#endif
 }
 
 size_t str_index(STR str, char c) {

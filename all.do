@@ -1,2 +1,2 @@
-redo lib/all
-redo tools/all
+redo-ifchange lib/all
+redo-ifchange tools/all
