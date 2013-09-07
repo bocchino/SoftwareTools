@@ -5,6 +5,7 @@ redo-ifchange params.fish
 
 redo-ifchange $cfile
 
+set base (basename $argv[1])
 set cfile src/$base.c
 set dfile $DEPEND/$base.d
 set ofile $BUILD/$base

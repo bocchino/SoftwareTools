@@ -6,7 +6,7 @@ redo-ifchange params.fish
 set OFILES $BUILD/*.o
 
 for file in $OFILES
-  redo-ifchange $file
-end
+  echo $file
+end | xargs redo-ifchange
 
 doecho libtool -static -o $argv[3] $OFILES

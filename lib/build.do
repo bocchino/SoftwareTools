@@ -15,6 +15,5 @@ end
 
 for file in $CFILES
   set base (basename -s '.c' $file)
-  set ofile $BUILD/$base.o
-  redo-ifchange $ofile
-end
+  echo $BUILD/$base.o
+end | xargs redo-ifchange

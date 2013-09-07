@@ -12,6 +12,6 @@ if not test -e $DEPEND
 end
 
 for file in $CFILES
-  set -gx base (basename -s '.c' $file)
-  redo-ifchange $BUILD/$base
-end
+  set base (basename -s '.c' $file)
+  echo $BUILD/$base
+end | xargs redo-ifchange
