@@ -1,6 +1,8 @@
 #!/opt/local/bin/fish
 
-echo 'testing lib' 1>&2
+. params.fish
+
+echoerr 'testing lib'
 redo lib/test
-echo 'testing tools' 1>&2
+echoerr 'testing tools'
 redo tools/test

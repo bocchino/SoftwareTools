@@ -1,6 +1,6 @@
 #!/opt/local/bin/fish
 
-. ../params.fish
+redo-ifchange params.fish
 . params.fish
 
 set OFILES $BUILD/*.o

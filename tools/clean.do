@@ -1,3 +1,5 @@
 #!/opt/local/bin/fish
 
-doecho rm -Rf dist debug
+. params.fish
+
+doecho rm -Rf $BUILD

@@ -1,5 +1,8 @@
 #!/opt/local/bin/fish
 
-doecho rm -Rf dist debug
+redo-ifchange params.fish
+. params.fish
+
+doecho rm -Rf $BUILD
 
 redo tests/clean

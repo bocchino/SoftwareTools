@@ -1,8 +1,7 @@
 #!/opt/local/bin/fish
 
-redo-ifchange ../../functions.fish
-
-. ../../functions.fish
+redo-ifchange params.fish
+. params.fish
 
 set -g passed 0
 set -g failed 0
@@ -17,7 +16,7 @@ function run
   end 
 end
 
-echoerr 'running tests with BUILD='$BUILD
+echoerr 'running tests'
 
 for file in fish/*
   if not echo $file | grep -q '~$'

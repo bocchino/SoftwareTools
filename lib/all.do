@@ -1,11 +1,7 @@
 #!/opt/local/bin/fish
 
-set -gx BUILD dist
-set -gx CCFLAGS -std=c99
-redo build
-redo dist/libst.a
+redo-ifchange params.fish
+. params.fish
 
-set -gx BUILD debug
-set -gx CCFLAGS -std=c99 -DDEBUG
-redo build
-redo debug/libst.a
+redo-ifchange $BUILD
+redo-ifchange $BUILD/libst.a

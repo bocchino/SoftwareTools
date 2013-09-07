@@ -1,6 +1,6 @@
 #!/opt/local/bin/fish
 
-. ../../functions.fish
+. params.fish
 
 set -g passed 0
 set -g failed 0
@@ -15,7 +15,7 @@ function run
   end 
 end
 
-echoerr 'running tests in '$BUILD
+echoerr 'running tests'
 
 for file in $BUILD/*
   run $file
