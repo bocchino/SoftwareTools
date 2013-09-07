@@ -9,4 +9,4 @@ for file in $OFILES
   redo-ifchange $file
 end
 
-libtool -static -o $argv[3] $OFILES
+doecho libtool -static -o $argv[3] $OFILES

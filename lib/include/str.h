@@ -10,8 +10,7 @@
 #define STR ARR(char)
 #define STR_NEW(n) ARR_NEW(char,n+1)
 #define STR_CONST(s) __str_const(s)
-#define STR_AT(s,i) ARR_AT(s,i,char)
-#define STR_C(s) (&(STR_AT(s,1)))
+#define STR_C(s) (&(ARR_AT(s,1)))
 
 #define BLANK ' '
 #define EOS 0
