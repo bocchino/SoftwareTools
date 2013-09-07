@@ -1,13 +1,13 @@
 // str.h
 // ----------------------------------------------------------------------
-// String functions
+// Operations on strings
 // ----------------------------------------------------------------------
 #ifndef STR_H
 #define STR_H
 
+#include "str_type.h"
 #include "arr.h"
 
-#define STR ARR(char)
 #define STR_HEAP(s,n) ARR_HEAP(s,char,n+1)
 #define STR_STACK(s,n) ARR_STACK(s,char,n+1)
 #define STR_AT(s,i) ARR_AT(s,i) 

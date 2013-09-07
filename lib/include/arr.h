@@ -1,15 +1,15 @@
 // arr.h
 // ----------------------------------------------------------------------
-// Array types
+// Operations on array types
 // ----------------------------------------------------------------------
 
 #ifndef ARR_H
 #define ARR_H
 
 #include <stdlib.h>
+#include "arr_type.h"
 #include "error.h"
 
-#define ARR(t) t* const
 #define ARR_HEAP(a,t,n) \
   ARR(t) a = malloc(n * sizeof(t)); \
   if (!a) error("ARR_HEAP: out of memory");
