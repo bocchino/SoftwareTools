@@ -6,13 +6,6 @@
 #include "str.h"
 #include <string.h>
 
-// ----------------------------------------------------------------------
-// __str_const: make a string from a char ptr
-// ----------------------------------------------------------------------
-STR __str_const(char* const p) {
-  return p-1;
-}
-
 size_t str_index(STR str, char c) {
   size_t index;
   for (index = 1; ARR_AT(str, index) != EOS; ++index)
@@ -30,7 +23,7 @@ size_t str_length(STR str) {
 }
 
 size_t str_itoc(int in, STR str, size_t size) {
-  STR digits = STR_CONST("0123456789");
+  STR digits = "0123456789";
 
   unsigned inabs = abs(in);
   ARR_AT(str, 1) = EOS;
@@ -56,7 +49,7 @@ size_t str_itoc(int in, STR str, size_t size) {
 }
 
 int str_ctoi(STR in, size_t i) {
-  STR digits = STR_CONST("0123456789");
+  STR digits = "0123456789";
 
   while (ARR_AT(in, i) == BLANK || ARR_AT(in, i) == TAB)
     ++i;

@@ -8,16 +8,14 @@
 #include "arr.h"
 
 #define STR ARR(char)
-#define STR_NEW(n) ARR_NEW(char,n+1)
-#define STR_CONST(s) __str_const(s)
-#define STR_C(s) (&(ARR_AT(s,1)))
+#define STR_HEAP(s,n) ARR_HEAP(s,char,n+1)
+#define STR_STACK(s,n) ARR_STACK(s,char,n+1)
+#define STR_AT(s,i) ARR_AT(s,i) 
 
 #define BLANK ' '
 #define EOS 0
 #define MINUS '-'
 #define TAB '\t'
-
-STR __str_const(char * const s);
 
 // ---------------------------------------------------------------------- 
 // index: find character c in string str

@@ -5,16 +5,14 @@
 #ifndef ERROR_H
 #define ERROR_H
 
-#include "str.h"
-
 // ---------------------------------------------------------------------- 
 // error_code: report an error and stop with specified code
 // ---------------------------------------------------------------------- 
-void error_code(STR str, int code);
+void error_code(char *const str, int code);
 
 // ---------------------------------------------------------------------- 
 // error: report an error and stop with code 1
 // ---------------------------------------------------------------------- 
-void error(STR str);
+void error(char *const str);
 
 #endif
