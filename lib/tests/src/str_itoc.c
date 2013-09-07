@@ -1,8 +1,5 @@
-#include <stdlib.h>
 #include <string.h>
 #include "str.h"
-
-#define MAXCHARS 10
 
 int main(int argc, char **argv) {
   STR_STACK(str, MAXCHARS);

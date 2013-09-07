@@ -12,6 +12,8 @@
 #define STR_STACK(s,n) ARR_STACK(s,char,n+1)
 #define STR_AT(s,i) ARR_AT(s,i) 
 
+#define MAXCHARS 255
+
 #define BLANK ' '
 #define EOS 0
 #define MINUS '-'
