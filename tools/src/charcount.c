@@ -1,13 +1,16 @@
 // ---------------------------------------------------------------------- 
-// copy: copy input characters to output
+// charcount: count characters in standard output
 // ---------------------------------------------------------------------- 
 
-#include <stdio.h>
+#include "io.h"
 
 int main(int argc, char **argv) {
-  int c;
+  char c;
+  int nc = 0;
   while ((c = getchar()) != EOF) {
-    putchar(c);
+    ++nc;
   }
+  io_putdec(nc, 1);
+  putchar(NEWLINE);
   return 0;
 }
