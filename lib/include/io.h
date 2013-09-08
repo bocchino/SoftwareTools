@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include "str.h"
 
+#define GETC(c) (c = getchar())
+#define PUTC(c) putchar(c)
+
 // ---------------------------------------------------------------------- 
 // putdec: put decimal integer n in field width >= w
 // ---------------------------------------------------------------------- 

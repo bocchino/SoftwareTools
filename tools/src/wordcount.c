@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
   int wc = 0;
   bool_t inword = NO;
 
-  while ((c = getchar()) != EOF) {
+  while (GETC(c) != EOF) {
     if (c == BLANK || c == NEWLINE || c == TAB)
       inword = NO;
     else if (inword == NO) {
@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     }
   }
   io_putdec(wc, 1);
-  putchar(NEWLINE);
+  PUTC(NEWLINE);
 
   return 0;
 }

@@ -8,10 +8,10 @@ int main(int argc, char **argv) {
   char c;
   int nl = 0;
 
-  while ((c = getchar()) != EOF)
+  while (GETC(c) != EOF)
     if (c == NEWLINE) ++nl;
   io_putdec(nl, 1);
-  putchar(NEWLINE);
+  PUTC(NEWLINE);
 
   return 0;
 }
