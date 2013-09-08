@@ -1,16 +1,16 @@
 // ---------------------------------------------------------------------- 
-// charcount: count characters in standard output
+// linecount: count lines in standard output
 // ---------------------------------------------------------------------- 
 
 #include "io.h"
 
 int main(int argc, char **argv) {
   char c;
-  int nc = 0;
+  int nl = 0;
 
   while ((c = getchar()) != EOF)
-    ++nc;
-  io_putdec(nc, 1);
+    if (c == NEWLINE) ++nl;
+  io_putdec(nl, 1);
   putchar(NEWLINE);
 
   return 0;

@@ -3,7 +3,6 @@
 redo-ifchange params.fish
 . params.fish
 
-redo-ifchange $cfile
 
 set base (basename $argv[1])
 set cfile src/$base.c
@@ -11,6 +10,8 @@ set dfile $DEPEND/$base.d
 set ofile $BUILD/$base
 set LIB ../lib/$BUILD
 set INCLUDE ../lib/include
+
+redo-ifchange $cfile $LIB/libst.a
 
 doecho $CC -MD -MF $dfile $CCFLAGS -I$INCLUDE -L$LIB -lst $cfile -o $argv[3]
 read deps < $dfile
