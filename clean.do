@@ -1,4 +1,4 @@
 redo lib/clean
 redo tools/clean
-redo rmtilde
+redo rm-tmp
 rm -R .redo
