@@ -7,7 +7,7 @@ set -g passed 0
 set -g failed 0
 
 function run
-  set base (basename $argv[1])
+  set base (basename $argv[1] -s .fish)
   if fish $argv[1]
     set passed (math $passed '+ 1')
   else

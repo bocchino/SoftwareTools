@@ -1,4 +1,2 @@
-#!/opt/local/bin/fish
-
 set out (echo abcd | eval ../$BUILD/copy)
 test $out = abcd 

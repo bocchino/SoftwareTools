@@ -1,7 +1,3 @@
-#!/opt/local/bin/fish
-
-. $LEVEL/functions.fish
-
 set out (echo 'line1
 line2
 line3' | eval ../$BUILD/linecount)
