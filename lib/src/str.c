@@ -3,8 +3,10 @@
 // String implementation
 // ----------------------------------------------------------------------
 
-#include "str.h"
 #include <string.h>
+
+#include "str.h"
+#include "loop.h"
 
 size_t str_index(const STR str, const char c) {
   size_t index;
@@ -33,7 +35,7 @@ size_t str_itoc(const int in, STR str, const size_t size) {
     const unsigned d = inabs % 10;
     ARR_AT(str, i) = ARR_AT(digits, d + 1);
     inabs /= 10;
-  } while (!(inabs == 0 || i >= size));
+  } UNTIL (inabs == 0 || i >= size);
   if (in < 0 & i < size) {
     ++i;
     ARR_AT(str, i) = MINUS;

@@ -4,6 +4,7 @@
 
 #include "io.h"
 #include "line.h"
+#include "loop.h"
 
 int main(int argc, char **argv) {
   char c;
@@ -16,7 +17,7 @@ int main(int argc, char **argv) {
       do {
         PUTC(BLANK);
         ++col;
-      } while (!(line_tabpos(col,tabs) == YES));
+      } UNTIL (line_tabpos(col,tabs) == YES);
     else if (c == NEWLINE) {
       PUTC(NEWLINE);
       col = 1;
