@@ -7,11 +7,11 @@ set -g passed 0
 set -g failed 0
 
 function run
-  set base (basename $argv[1] -s .fish)
+  set base (basename -s .fish $argv[1])
   if fish $argv[1]
     set passed (math $passed '+ 1')
   else
-    echoerr $base': FAILED with status '$status 1>&2
+    echoerr $base': FAILED with status '$status
     set failed (math $failed '+ 1')
   end 
 end
