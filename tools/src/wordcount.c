@@ -6,7 +6,7 @@
 #include "bool_type.h"
 
 int main(int argc, char **argv) {
-  char c;
+  int c;
   int wc = 0;
   bool_t inword = NO;
 

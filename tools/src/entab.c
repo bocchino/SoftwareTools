@@ -7,7 +7,7 @@
 #include "loop.h"
 
 int main(int argc, char **argv) {
-  char c;
+  int c;
   size_t col = 1;
   size_t newcol;
   ARR_STACK(tabs,bool_t,MAXLINE);

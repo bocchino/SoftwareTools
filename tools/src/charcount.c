@@ -5,7 +5,7 @@
 #include "io.h"
 
 int main(int argc, char **argv) {
-  char c;
+  int c;
   int nc = 0;
 
   while (GETC(c) != EOF)
