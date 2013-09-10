@@ -6,6 +6,6 @@
 #ifndef ARR_TYPE_H
 #define ARR_TYPE_H
 
-#define ARR(t) t* const
+#define ARR(t) t*
 
 #endif

@@ -8,7 +8,7 @@
 #include "str.h"
 
 void error_code(const STR str, const int code) {
-  fprintf(stderr, "%s", str);
+  fprintf(stderr, "%s\n", str);
   exit(code);
 }
 
