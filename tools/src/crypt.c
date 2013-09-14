@@ -12,10 +12,8 @@
 
 char key[MAXKEY+1];
 
-int main(int argc, STR *const argv) {
+MAIN (
   int c;
-
-  args_setargs(argc, argv);
 
   size_t keylen = args_getarg(1, key, MAXKEY);
   if (keylen > MAXKEY)
@@ -24,4 +22,4 @@ int main(int argc, STR *const argv) {
     PUTC(c ^ ARR_AT(key, i));
 
   return 0;
-}
+)

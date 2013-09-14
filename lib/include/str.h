@@ -6,6 +6,7 @@
 #define STR_H
 
 #include "str_type.h"
+#include "bool_type.h"
 #include "arr.h"
 
 #define STR_HEAP(s,n) ARR_HEAP(s,char,n+1)
@@ -16,6 +17,10 @@
 
 #define BLANK ' '
 #define EOS 0
+#define ESCAPE '@'
+#define DASH '-'
+#define LETN 'n'
+#define LETT 't'
 #define MINUS '-'
 #define NEWLINE '\n'
 #define TAB '\t'
@@ -39,5 +44,17 @@ size_t str_itoc(const int in, STR str, const size_t size);
 // ctoi: convert string at in[*ip] to integer, increment *ip
 // ---------------------------------------------------------------------- 
 int str_ctoi(const STR in, size_t *ip);
+
+
+// ---------------------------------------------------------------------- 
+// esc: map array[i] into escaped character if appropriate 
+// ---------------------------------------------------------------------- 
+char str_esc(const STR const array, size_t *const ip); 
+
+// ---------------------------------------------------------------------- 
+// addset: put c in set[*jp] if it fits, increment *jp
+// ---------------------------------------------------------------------- 
+bool_t str_addset(char c, STR const set, size_t *const jp, 
+    const size_t maxsiz);
 
 #endif

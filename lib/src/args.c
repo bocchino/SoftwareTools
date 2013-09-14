@@ -8,9 +8,9 @@
 #include "str.h"
 
 static size_t argc;
-static STR const *argv; 
+static const STR const *argv; 
 
-void args_setargs(const size_t _argc, STR const *const _argv) {
+void args_setargs(const size_t _argc, const STR const *const _argv) {
   argc = _argc;
   argv = _argv; 
 }

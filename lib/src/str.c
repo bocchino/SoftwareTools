@@ -64,3 +64,40 @@ int str_ctoi(const STR in, size_t *ip) {
   return result;
 }
 
+char str_esc(const STR const array, size_t *const ip) {
+  size_t i = *ip; 
+  char result;
+  if (STR_AT(array, i) != ESCAPE)
+    result = STR_AT(array, i);
+  else if (STR_AT(array, i+1) == EOS)
+    // ESCAPE not special at end
+    result = ESCAPE;
+  else {
+    ++i;
+    if (STR_AT(array, i) == LETN)
+      result = NEWLINE;
+    else if (STR_AT(array, i) == LETT)
+      result = TAB;
+    else
+      result = STR_AT(array, i);
+  }
+  *ip = i;
+  return result;
+}
+
+bool_t str_addset(char c, STR const set, size_t *const jp, 
+    const size_t maxsiz) {
+  size_t j = *jp;
+  bool_t result;
+  
+  if (j > maxsiz)
+    result = NO;
+  else {
+    STR_AT(set, j) = c;
+    ++j;
+    result = YES;
+  } 
+  *jp = j;
+  return result;
+}
+
