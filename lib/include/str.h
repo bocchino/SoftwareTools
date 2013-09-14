@@ -36,8 +36,8 @@ size_t str_length(const STR str);
 size_t str_itoc(const int in, STR str, const size_t size);
 
 // ---------------------------------------------------------------------- 
-// ctoi: convert string at in[i] to integer, increment i
+// ctoi: convert string at in[*ip] to integer, increment *ip
 // ---------------------------------------------------------------------- 
-int str_ctoi(const STR in, size_t i);
+int str_ctoi(const STR in, size_t *ip);
 
 #endif

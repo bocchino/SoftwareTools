@@ -50,7 +50,8 @@ size_t str_itoc(const int in, STR str, const size_t size) {
   return result;
 }
 
-int str_ctoi(const STR in, size_t i) {
+int str_ctoi(const STR in, size_t *ip) {
+  size_t i = *ip;
   while (ARR_AT(in, i) == BLANK || ARR_AT(in, i) == TAB)
     ++i;
   int result = 0;
@@ -59,6 +60,7 @@ int str_ctoi(const STR in, size_t i) {
     if (d == 0) break;
     result = 10 * result + d - 1; 
   }
+  *ip = i;
   return result;
 }
 
