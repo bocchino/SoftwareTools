@@ -2,7 +2,7 @@
 // charcount: count characters in standard output
 // ---------------------------------------------------------------------- 
 
-#include "io.h"
+#include "st.h"
 
 int main(int argc, char **argv) {
   int c;

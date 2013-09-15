@@ -4,13 +4,13 @@ redo-ifchange params.fish
 . params.fish
 
 if not test -e $BUILD
-  doecho mkdir $BUILD
+  evald mkdir $BUILD
 end
 
 set -gx DEPEND $BUILD/depend
 
 if not test -e $DEPEND
-  doecho mkdir $DEPEND
+  evald mkdir $DEPEND
 end
 
 for file in $CFILES

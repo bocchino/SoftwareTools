@@ -2,7 +2,7 @@
 // copy: copy input characters to output
 // ---------------------------------------------------------------------- 
 
-#include "io.h"
+#include "st.h"
 
 int main(int argc, char **argv) {
   int c;

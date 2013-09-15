@@ -2,4 +2,4 @@
 
 . params.fish
 
-doecho rm -Rf $BUILD
+evald rm -Rf $BUILD

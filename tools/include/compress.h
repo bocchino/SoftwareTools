@@ -6,7 +6,7 @@
 #ifndef COMPRESS_H
 #define COMPRESS_H
 
-#include "io.h"
+#include "st.h"
 
 #define MAXCHUNK 255
 #define THRESH 5

@@ -2,9 +2,7 @@
 // detab: convert tabs to equivalent number of blanks
 // ---------------------------------------------------------------------- 
 
-#include "io.h"
-#include "line.h"
-#include "loop.h"
+#include "st.h"
 
 int main(int argc, char **argv) {
   int c;

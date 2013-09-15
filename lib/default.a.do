@@ -9,4 +9,4 @@ for file in $OFILES
   echo $file
 end | xargs redo-ifchange
 
-doecho libtool -static -o $argv[3] $OFILES
+evald libtool -static -o $argv[3] $OFILES

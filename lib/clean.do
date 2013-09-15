@@ -3,6 +3,6 @@
 redo-ifchange params.fish
 . params.fish
 
-doecho rm -Rf $BUILD
+evald rm -Rf $BUILD
 
 redo tests/clean

@@ -2,8 +2,7 @@
 // wordcount: count words in standard input
 // ---------------------------------------------------------------------- 
 
-#include "io.h"
-#include "bool_type.h"
+#include "st.h"
 
 int main(int argc, char **argv) {
   int c;

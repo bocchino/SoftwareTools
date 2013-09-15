@@ -2,11 +2,7 @@
 // crypt: encrypt and decrypt
 // ---------------------------------------------------------------------- 
 
-#include <stdlib.h>
-#include "args.h"
-#include "arr.h"
-#include "error.h"
-#include "io.h"
+#include "st.h"
 
 #define MAXKEY 255
 

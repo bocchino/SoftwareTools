@@ -2,11 +2,7 @@
 // translit: map characters 
 // ---------------------------------------------------------------------- 
 
-#include "args.h"
-#include "bool_type.h"
-#include "io.h"
-#include "loop.h"
-#include "str.h"
+#include "st.h"
 
 #define MAXARR 1024
 #define MAXSET 1024

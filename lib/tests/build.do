@@ -14,5 +14,5 @@ set LIB ../$BUILD
 for file in $CFILES
   set base (basename -s '.c' $file)
   set ofile $BUILD/$base
-  doecho $CC -I../include $CCFLAGS -L$LIB -lst $file -o $ofile
+  evald $CC -I../include $CCFLAGS -L$LIB -lst $file -o $ofile
 end
