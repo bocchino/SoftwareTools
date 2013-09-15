@@ -24,6 +24,9 @@ The code lives in two directories:
 I used my judgment to decide which code to put where. I may change my mind as
 I work through more of the book.
 
+Each of the directories `lib` and `tools` has a subdirectory `tests` containing
+tests.
+
 ### Style ###
 
 The code is not idiomatic C; instead, it attempts to mimic the style of the
