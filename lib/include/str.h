@@ -17,18 +17,25 @@
 
 #define BLANK ' '
 #define EOS 0
-#define ESCAPE '@'
+#define ESCAPE '\'
 #define DASH '-'
 #define LETN 'n'
 #define LETT 't'
 #define MINUS '-'
 #define NEWLINE '\n'
+#define NOT '~'
 #define TAB '\t'
 
 // ---------------------------------------------------------------------- 
 // index: find character c in string str
 // ---------------------------------------------------------------------- 
 size_t str_index(const STR str, const char c);
+
+// ---------------------------------------------------------------------- 
+// xindex: invert condition returned by index
+// ---------------------------------------------------------------------- 
+size_t str_xindex(const STR array, const char c,
+    bool_t allbuti, size_t lastto);
 
 // ---------------------------------------------------------------------- 
 // length: compute length of string 

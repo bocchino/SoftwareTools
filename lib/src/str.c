@@ -4,6 +4,7 @@
 // ----------------------------------------------------------------------
 
 #include <string.h>
+#include <stdio.h>
 
 #include "str.h"
 #include "loop.h"
@@ -14,6 +15,18 @@ size_t str_index(const STR str, const char c) {
     if (ARR_AT(str, index) == c)
       return index;
   return 0; 
+}
+
+size_t str_xindex(const STR array, const char c,
+    bool_t allbut, size_t lastto) {
+  if (c == EOF)
+    return 0;
+  else if (allbut == NO)
+    return str_index(array, c);
+  else if (str_index(array, c) > 0)
+    return 0;
+  else
+    return lastto + 1;
 }
 
 size_t str_length(const STR str) {
