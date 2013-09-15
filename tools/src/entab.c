@@ -4,7 +4,7 @@
 
 #include "st.h"
 
-int main(int argc, char **argv) {
+MAIN (
   int c;
   size_t col = 1;
   size_t newcol;
@@ -13,7 +13,8 @@ int main(int argc, char **argv) {
   line_settab(tabs);
   REPEAT {
     newcol = col;
-    while (GETC(c) == BLANK) { // collect blanks
+    while (GETC(c) == BLANK) { 
+      // collect blanks
       ++newcol;
       if (line_tabpos(newcol, tabs) == YES) {
         PUTC(TAB);
@@ -21,7 +22,8 @@ int main(int argc, char **argv) {
       }
     }
     for ( ; col < newcol; ++col)
-      PUTC(BLANK);             // output leftover blanks
+      // output leftover blanks 
+      PUTC(BLANK);
     if (c == EOF)
       break;
     PUTC(c);
@@ -32,4 +34,4 @@ int main(int argc, char **argv) {
   }
 
   return 0;
-}
+)

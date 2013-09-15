@@ -4,7 +4,7 @@
 
 #include "st.h"
 
-int main(int argc, char **argv) {
+MAIN (
   int c;
   int wc = 0;
   bool_t inword = NO;
@@ -21,4 +21,4 @@ int main(int argc, char **argv) {
   PUTC(NEWLINE);
 
   return 0;
-}
+)

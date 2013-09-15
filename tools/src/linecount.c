@@ -4,7 +4,7 @@
 
 #include "st.h"
 
-int main(int argc, char **argv) {
+MAIN (
   int c;
   int nl = 0;
 
@@ -14,4 +14,4 @@ int main(int argc, char **argv) {
   PUTC(NEWLINE);
 
   return 0;
-}
+)

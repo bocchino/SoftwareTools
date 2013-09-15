@@ -4,7 +4,7 @@
 
 #include "st.h"
 
-int main(int argc, char **argv) {
+MAIN (
   int c;
   size_t col = 1;
   ARR_STACK(tabs,bool_t,MAXLINE);
@@ -26,4 +26,4 @@ int main(int argc, char **argv) {
     }
 
   return 0;
-}
+)

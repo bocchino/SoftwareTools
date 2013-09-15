@@ -4,10 +4,10 @@
 
 #include "st.h"
 
-int main(int argc, char **argv) {
+MAIN (
   int c;
   while (GETC(c) != EOF) {
     PUTC(c);
   }
   return 0;
-}
+)

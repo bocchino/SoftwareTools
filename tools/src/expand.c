@@ -4,8 +4,10 @@
 
 #include "compress.h"
 
-int main(int argc, char **argv) {
-  int c, code;
+MAIN (
+  int c;
+  int code;
+
   while (GETC(code) != EOF) {
     if (code == RCODE) { 
       // expand repetition
@@ -27,5 +29,6 @@ int main(int argc, char **argv) {
         break;
     }
   }
+
   return 0;
-}
+)

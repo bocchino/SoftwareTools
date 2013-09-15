@@ -20,8 +20,9 @@ void putbuf() {
   nsave = 0;
 }
 
-int main(int argc, char **argv) {
-  int c, lastc;
+MAIN (
+  int c;
+  int lastc;
   size_t nrep;
 
   for (GETC(lastc); lastc != EOF; lastc = c) {
@@ -45,4 +46,4 @@ int main(int argc, char **argv) {
   putbuf(); // last chunk
 
   return 0;
-}
+)
