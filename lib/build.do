@@ -7,8 +7,6 @@ if not test -e $BUILD
   evald mkdir $BUILD
 end
 
-set -gx DEPEND $BUILD/depend
-
 if not test -e $DEPEND
   evald mkdir $DEPEND
 end

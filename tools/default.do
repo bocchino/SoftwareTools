@@ -8,12 +8,12 @@ set base (basename $argv[1])
 set cfile src/$base.c
 set dfile $DEPEND/$base.d
 set ofile $BUILD/$base
-set LIB ../lib/$BUILD
-set INCLUDE -Iinclude -I../lib/include
+set lib ../lib/$BUILD
+set include -Iinclude -I../lib/include
 
-redo-ifchange $cfile $LIB/libst.a
+redo-ifchange $cfile $lib/libst.a
 
-evald $CC -MD -MF $dfile $CCFLAGS $INCLUDE -L$LIB -lst $cfile -o $argv[3]
+evald $CC -MD -MF $dfile $CCFLAGS $include -L$lib -lst $cfile -o $argv[3]
 read deps < $dfile
 set deps (echo $deps | tr '\n' ' ')
 set deps (echo $deps | sed -e 's/^.*: *//' -e 's/\\\\//g')

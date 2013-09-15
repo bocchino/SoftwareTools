@@ -7,8 +7,8 @@ if not test -e $BUILD
   evald mkdir $BUILD
 end
 
-if not test -e $DEPEND
-  evald mkdir $DEPEND
+if not test -e $BUILD/depend
+  evald mkdir $BUILD/depend
 end
 
 for file in $CFILES
