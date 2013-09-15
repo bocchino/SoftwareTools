@@ -1,2 +1,2 @@
-set out (echo '        abc' | eval ../$BUILD/entab)
+set out (echo '        abc' | eval ../build/entab)
 test $out = \tabc

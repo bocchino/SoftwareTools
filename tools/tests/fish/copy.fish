@@ -1,2 +1,2 @@
-set out (echo abcd | eval ../$BUILD/copy)
+set out (echo abcd | eval ../build/copy)
 test $out = abcd 

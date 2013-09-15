@@ -1,2 +1,2 @@
-set out (echo -n abcd | eval ../$BUILD/charcount)
+set out (echo -n abcd | eval ../build/charcount)
 test $out = 4
