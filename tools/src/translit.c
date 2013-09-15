@@ -37,7 +37,7 @@ static void filset(const char delim, const STR const array, size_t *const i,
     STR const set, size_t *const j, const size_t maxset) {
   for ( ; STR_AT(array, *i) != delim && STR_AT(array, *i) != EOS; ++*i)
    if (STR_AT(array, *i) == ESCAPE)
-     str_addset(STR_AT(array, *i), set, j, maxset);
+     str_addset(str_esc(array, i), set, j, maxset);
    else if (STR_AT(array, *i) != DASH)
      str_addset(STR_AT(array, *i), set, j, maxset);
    else if (*j <= 1 || STR_AT(array, (*i)+1) == EOS)

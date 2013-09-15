@@ -17,7 +17,7 @@
 
 #define BLANK ' '
 #define EOS 0
-#define ESCAPE '\\'
+#define ESCAPE '@'
 #define DASH '-'
 #define LETN 'n'
 #define LETT 't'
