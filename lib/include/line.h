@@ -1,6 +1,5 @@
-// line.h
 // ----------------------------------------------------------------------
-// Operations on lines of text
+// line.h: operations on lines of text
 // ----------------------------------------------------------------------
 #ifndef LINE_H
 #define LINE_H

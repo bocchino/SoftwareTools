@@ -1,6 +1,5 @@
-// compress.h
 // ---------------------------------------------------------------------- 
-// Definitions common to compression programs
+// compress.h: definitions common to compression programs
 // ---------------------------------------------------------------------- 
 
 #ifndef COMPRESS_H
