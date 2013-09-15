@@ -1,4 +1,4 @@
-#!/opt/local/bin/fish
+#!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
 # rm-redo: remove redo database files

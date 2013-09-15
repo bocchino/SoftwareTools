@@ -1,4 +1,4 @@
-#!/opt/local/bin/fish
+#!/usr/bin/env fish
 
 redo-ifchange params.fish
 . params.fish
