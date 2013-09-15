@@ -22,6 +22,7 @@ size_t args_getarg(const size_t n, STR const arg, const size_t max_size);
 #define MAIN(X) \
   int main(const int argc, const STR const *const argv) { \
     args_setargs(argc, argv); \
-    X }
+    X \
+  }
 
 #endif
