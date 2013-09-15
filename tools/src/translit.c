@@ -7,7 +7,6 @@
 #include "io.h"
 #include "loop.h"
 #include "str.h"
-#include "translit.h"
 
 #define MAXARR 1024
 #define MAXSET 1024
