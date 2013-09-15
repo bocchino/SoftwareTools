@@ -59,6 +59,21 @@ bool_t makset(const STR const array, const size_t k, STR const set,
   return str_addset(EOS, set, &j, size);
 }
 
+// ---------------------------------------------------------------------- 
+// xindex: invert condition returned by index
+// ---------------------------------------------------------------------- 
+size_t str_xindex(const STR const array, const char c,
+    const bool_t allbut, const size_t lastto) {
+  if (c == EOF)
+    return 0;
+  else if (allbut == NO)
+    return str_index(array, c);
+  else if (str_index(array, c) > 0)
+    return 0;
+  else
+    return lastto + 1;
+}
+
 static char arg[MAXARR];
 static char from[MAXSET];
 static char to[MAXSET];

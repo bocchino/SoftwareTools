@@ -1,6 +1,5 @@
-// str.c
 // ----------------------------------------------------------------------
-// String implementation
+// str.c: string implementation
 // ----------------------------------------------------------------------
 
 #include <string.h>
@@ -9,24 +8,12 @@
 #include "str.h"
 #include "loop.h"
 
-size_t str_index(const STR str, const char c) {
+size_t str_index(const STR const str, const char c) {
   size_t index;
   for (index = 1; ARR_AT(str, index) != EOS; ++index)
     if (ARR_AT(str, index) == c)
       return index;
   return 0; 
-}
-
-size_t str_xindex(const STR array, const char c,
-    bool_t allbut, size_t lastto) {
-  if (c == EOF)
-    return 0;
-  else if (allbut == NO)
-    return str_index(array, c);
-  else if (str_index(array, c) > 0)
-    return 0;
-  else
-    return lastto + 1;
 }
 
 size_t str_length(const STR str) {
