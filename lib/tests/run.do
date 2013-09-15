@@ -15,8 +15,6 @@ function run
   end 
 end
 
-echoerr 'running tests'
-
 for file in $BUILD/*
   run $file
 end
