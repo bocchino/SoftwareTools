@@ -70,8 +70,8 @@ on the command line.
 ### Compiler ###
 
 The build system assumes you have [clang](http://clang.llvm.org) installed on
-your system. If you don't (or you'd rather use gcc), first edit `params.fish`
-in the top-level directory to replace `clang` with `gcc`.
+your system. If you don't (or you'd rather use gcc), then edit `params.fish` in
+the top-level directory to replace `clang` with `gcc`.
 
 ### Building ###
 
