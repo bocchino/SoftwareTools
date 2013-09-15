@@ -5,10 +5,10 @@ SoftwareTools
 
 ## 1. Introduction ##
 
-This is an implementation in C of the programs in the classic text *Software
-Tools* by Brian W. Kernighan and P.J. Plauger (Addison-Wesley 1976). Mostly
-this is for my own edification, but it may be interesting or useful to others
-as well. So far I have implemented the programs from the first two chapters.
+This is an implementation in C of the programs in the classic text [*Software
+Tools*](http://www.amazon.com/Software-Tools-Brian-W-Kernighan/dp/020103669X)
+by Brian W. Kernighan and P.J. Plauger (Addison-Wesley 1976). So far I have
+implemented the programs from the first two chapters.
 
 ## 2. Code Organization and Style ##
 
