@@ -27,7 +27,8 @@ MAIN (
 
   for (GETC(lastc); lastc != EOF; lastc = c) {
     for (nrep = 1; GETC(c) == lastc; ++nrep)
-      if (nrep >= MAXCHUNK) // count repetitions
+      if (nrep >= MAXCHUNK) 
+        // count repetitions
         break;
     if (nrep < THRESH)
       for ( ; nrep > 0; --nrep) {
@@ -43,7 +44,8 @@ MAIN (
       PUTC(nrep);
     }
   }
-  putbuf(); // last chunk
+  // last chunk  
+  putbuf(); 
 
   return 0;
 )
