@@ -45,7 +45,6 @@ size_t str_itoc(const int in, STR str, const size_t size);
 // ---------------------------------------------------------------------- 
 int str_ctoi(const STR in, size_t *ip);
 
-
 // ---------------------------------------------------------------------- 
 // esc: map array[i] into escaped character if appropriate 
 // ---------------------------------------------------------------------- 
