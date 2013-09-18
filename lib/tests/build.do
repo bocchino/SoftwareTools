@@ -4,7 +4,7 @@ redo-ifchange params.fish
 . params.fish
 
 if not test -e $BUILD
-  eval mkdir $BUILD
+  evald mkdir $BUILD
 end
 
 set lib ../$BUILD
