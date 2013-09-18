@@ -16,10 +16,8 @@ function run
   end 
 end
 
-for file in fish/*
-  if not echo $file | grep -q '~$'
-    run $file
-  end
+for file in fish/*.fish
+  run $file
 end
 
 echoerr $passed' passed, '$failed' failed'
