@@ -57,4 +57,9 @@ char str_esc(const STR const array, size_t *const ip);
 bool_t str_addset(char c, STR const set, size_t *const jp, 
     const size_t maxsiz);
 
+// ---------------------------------------------------------------------- 
+// equal: compare str1 to str2; return YES if equal, NO if not
+// ---------------------------------------------------------------------- 
+bool_t str_equal(const STR const str1, const STR const str2);
+
 #endif

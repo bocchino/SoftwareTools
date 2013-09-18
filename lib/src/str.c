@@ -101,3 +101,10 @@ bool_t str_addset(char c, STR const set, size_t *const jp,
   return result;
 }
 
+bool_t str_equal(const STR const str1, const STR const str2) {
+  for (size_t i = 1; STR_AT(str1, i) == STR_AT(str2, i); ++i)
+    if (STR_AT(str1, i) == EOS)
+      return YES;
+  return NO;
+}
+
