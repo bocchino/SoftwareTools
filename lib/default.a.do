@@ -3,10 +3,13 @@
 redo-ifchange params.fish
 . params.fish
 
-set ofiles $BUILD/*.o
+set cfiles $SRC/*.c
+set -e ofiles
 
-for file in $ofiles
-  echo $file
-end | xargs redo-ifchange
+for cfile in $cfiles
+  set base (basename -s '.c' $cfile)
+  set ofiles $ofiles $BUILD/$base.o
+end 
 
+redo-ifchange $ofiles
 evald libtool -static -o $argv[3] $ofiles

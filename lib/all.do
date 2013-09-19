@@ -3,5 +3,6 @@
 redo-ifchange params.fish
 . params.fish
 
-redo-ifchange $BUILD
+mkdir -p $BUILD
+mkdir -p $DEPEND
 redo-ifchange $BUILD/libst.a
