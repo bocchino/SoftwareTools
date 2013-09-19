@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-redo-ifchange params.fish
 . params.fish
 
 set -g passed 0

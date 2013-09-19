@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-redo-ifchange params.fish
 . params.fish
 
 set cfiles $SRC/*.c
