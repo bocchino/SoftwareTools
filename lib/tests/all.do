@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
-# all.do: build and run everything
+# lib/tests/all.do: build and run everything
 # ----------------------------------------------------------------------
 
 . defs.fish

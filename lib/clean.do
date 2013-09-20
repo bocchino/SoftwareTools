@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
-# clean.do: remove generated files
+# lib/clean.do: remove generated files
 # ---------------------------------------------------------------------- 
 
 . defs.fish

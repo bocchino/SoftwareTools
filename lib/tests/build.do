@@ -1,14 +1,12 @@
 #!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
-# build.do: build everything
+# lib/tests/build.do: build everything
 # ----------------------------------------------------------------------
 
 . defs.fish
 
-if not test -e $BUILD
-  evald mkdir $BUILD
-end
+mkdir -p $BUILD
 
 set lib ../$BUILD
 

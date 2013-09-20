@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
-# default.o.do: build a .o file
+# lib/default.o.do: build a .o file
 # ---------------------------------------------------------------------- 
 
 . defs.fish
@@ -12,6 +12,4 @@ set dfile $DEPEND/$base.d
 
 redo-ifchange $cfile
 evald $CC -MD -MF $dfile $CCFLAGS -I$INCLUDE $cfile -c -o $argv[3]
-tr '\n' ' ' < $dfile | read deps
-set deps (echo $deps | sed -e 's/^.*: *//' -e 's/\\\\//g')
-echo $deps | xargs redo-ifchange
+redo-ifchange-d $dfile

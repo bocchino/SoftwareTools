@@ -1,7 +1,23 @@
+# ----------------------------------------------------------------------
+# defs.fish
+# ----------------------------------------------------------------------
+
+if not set -q LEVEL
+  set -gx LEVEL .
+end
+
 redo-ifchange $LEVEL/defs.fish
 
 set -gx CC clang
 set -gx CCFLAGS -std=c99
+
+function redo-ifchange-d -d 'Redo if dependencies changed'
+  for arg in $argv
+    tr '\n' ' ' < $arg | read deps
+    set deps (echo $deps | sed -e 's/^.*: *//' -e 's/\\\\//g')
+    echo $deps
+  end | xargs redo-ifchange
+end
 
 function echoerr -d 'Echo args to stderr'
   echo $argv 1>&2
