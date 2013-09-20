@@ -1,8 +1,7 @@
-redo-ifchange params.fish
+redo-ifchange defs.fish
 
 set -gx LEVEL ../..
-redo-ifchange $LEVEL/params.fish
-. $LEVEL/params.fish
+. $LEVEL/defs.fish
 
 set -gx SRC src
 set -gx BUILD build

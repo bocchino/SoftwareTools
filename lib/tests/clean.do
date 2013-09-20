@@ -1,5 +1,10 @@
 #!/usr/bin/env fish
 
-. params.fish
+# ----------------------------------------------------------------------
+# clean.do: remove generated files
+# ---------------------------------------------------------------------- 
+
+. defs.fish
 
 evald rm -Rf $BUILD
+evald rm-tmp

@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
-# rm-tmp: remove temporary files
+# clean.do: remove generated files
 # ----------------------------------------------------------------------
 
-. params.fish
+. defs.fish
 
-find . -name '*~' | xargs rm
-find . -name '*redo*tmp' | xargs rm
+rm-tmp
+rm-redo

@@ -1,6 +1,10 @@
 #!/usr/bin/env fish
 
-. params.fish
+# ----------------------------------------------------------------------
+# default.o.do: build a .o file
+# ---------------------------------------------------------------------- 
+
+. defs.fish
 
 set base (basename -s '.o' $argv[1])
 set cfile $SRC/$base.c

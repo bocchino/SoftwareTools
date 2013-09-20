@@ -1,6 +1,10 @@
 #!/usr/bin/env fish
 
-. params.fish
+# ----------------------------------------------------------------------
+# default.do: build an executable
+# ---------------------------------------------------------------------- 
+
+. defs.fish
 
 set base (basename $argv[1])
 set cfile src/$base.c

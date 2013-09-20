@@ -1,6 +1,10 @@
 #!/usr/bin/env fish
 
-. params.fish
+# ----------------------------------------------------------------------
+# build.do: build everything
+# ----------------------------------------------------------------------
+
+. defs.fish
 
 if not test -e $BUILD
   evald mkdir $BUILD
