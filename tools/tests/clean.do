@@ -6,5 +6,5 @@
 
 . defs.fish
 
-rm-tmp
-rm-redo
+evald rm-tmp
+evald rm-redo

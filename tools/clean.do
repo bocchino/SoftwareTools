@@ -7,5 +7,5 @@
 . defs.fish
 
 evald rm -Rf $BUILD
-rm-tmp
-rm-redo
+evald rm-tmp
+evald rm-redo

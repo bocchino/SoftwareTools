@@ -9,5 +9,5 @@ set -gx LEVEL .
 
 redo lib/clean
 redo tools/clean
-rm-tmp
-rm-redo
+evald rm-tmp
+evald rm-redo
