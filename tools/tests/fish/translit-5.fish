@@ -1,3 +1,7 @@
+# ----------------------------------------------------------------------
+# translit-5.fish: test translit-5
+# ----------------------------------------------------------------------
+
 set out (echo abcABC123 | ../build/translit ~a-zA-Z -)
 if not test $out = abcABC-
   exit 1
