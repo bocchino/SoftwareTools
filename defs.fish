@@ -1,7 +1,8 @@
 # ----------------------------------------------------------------------
-# defs.fish
+# defs.fish: definitions common to all subdirectories
 # ----------------------------------------------------------------------
 
+# Users of this file should set LEVEL first
 if not set -q LEVEL
   set -gx LEVEL .
 end
