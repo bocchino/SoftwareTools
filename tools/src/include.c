@@ -34,18 +34,16 @@ MAIN(
     while (io_getlin(line, ARR_AT(infile, level), MAXLINE) <= MAXLINE) {
       size_t loc = 1;
       getwrd(line, &loc, str);
-      if (str_equal(str, incl) == NO) {
+      if (str_equal(str, incl) == NO)
         io_putlin(line, stdout);
-      }
       else {
         ++level;
         if (level > NFILES)
           error("includes nested too deeply.");
         getwrd(line, &loc, str);
         ARR_AT(infile, level) = fopen(str, "r");
-        if (ARR_AT(infile, level) == NULL) {
+        if (ARR_AT(infile, level) == NULL)
           io_cant(str);
-        }
       }
     } 
     if (level > 1)
