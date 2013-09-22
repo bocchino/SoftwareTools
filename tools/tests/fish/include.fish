@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
-# compare.fish: test compare
+# include.fish: test include
 # ----------------------------------------------------------------------
 
-../build/compare fish/compare-in-{1,2}.txt > fish/compare.out 2>&1
-diff fish/compare.out fish/compare.ref 1>&2
+../build/include < fish/include-in-1.txt > fish/include.out
+diff fish/include.out fish/include.ref 1>&2

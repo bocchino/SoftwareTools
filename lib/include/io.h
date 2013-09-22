@@ -20,8 +20,13 @@ void io_putdec(const int n, const size_t w);
 // ---------------------------------------------------------------------- 
 // getlin: get a line of text from a file
 // ---------------------------------------------------------------------- 
-size_t getlin(STR const line, FILE *file, const size_t maxlen); 
+size_t io_getlin(STR const line, FILE *file, const size_t maxlen); 
 
-#define putlin(s, stream) fputs(s, stream)
+#define io_putlin(s, stream) fputs(s, stream)
+
+// ---------------------------------------------------------------------- 
+// cant: print "can't open" message to stderr
+// ---------------------------------------------------------------------- 
+void io_cant(const STR const str);
 
 #endif

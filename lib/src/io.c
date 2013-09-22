@@ -14,9 +14,15 @@ void io_putdec(const int n, const size_t w) {
     putchar(STR_AT(chars,i));
 }
 
-size_t getlin(STR const line, FILE *file, const size_t maxlen) {
+size_t io_getlin(STR const line, FILE *file, const size_t maxlen) {
   const STR const result = fgets(line, maxlen, file);
   if (result != NULL)
     return str_length(line); 
   return maxlen + 1;
 }
+
+void io_cant(const STR const str) {
+  fprintf(stderr, "can't open %s", str);
+  exit(1);
+}
+
