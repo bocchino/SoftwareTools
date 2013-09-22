@@ -39,12 +39,23 @@ function nodebug -d 'Turn build debugging off'
   set -e DEBUG
 end
 
+function doall -d 'Do command on all files matching regex'
+  if not test (count $argv) = 2
+    echo 'usage: doall command regex' 1>&2
+    return 1
+  end
+  set cmd $argv[1]
+  set regex $argv[2] 
+  set line 'find . -name '\'$regex\'' -print0 | xargs -0 '$cmd
+  eval $line
+end
+
 function rm-tmp -d 'Remove temporary files'
-  find . -name '*~' | xargs rm
-  find . -name '*redo*tmp' | xargs rm
+  doall rm '*~'
+  doall rm '*redo*tmp'
 end
 
 function rm-redo -d 'Remove redo database files'
-  find . -name .redo | xargs rm -R
+  doall 'rm -R' .redo
 end
 
