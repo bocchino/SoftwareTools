@@ -26,3 +26,11 @@ void io_cant(const STR const str) {
   exit(1);
 }
 
+void io_fcopy(FILE *const in, FILE *const out) {
+  char buf[MAXLINE];
+  
+  while (io_getlin(buf, in, MAXLINE) <= MAXLINE)
+    io_putlin(buf, out);
+}
+
+

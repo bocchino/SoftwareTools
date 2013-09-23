@@ -7,7 +7,7 @@
 #include "arr.h"
 #include "bool_type.h"
 
-#define MAXLINE 80
+#define MAXLINE 256 
 
 // ---------------------------------------------------------------------- 
 // tabpos: return YES if col is a tab stop
