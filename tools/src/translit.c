@@ -84,7 +84,7 @@ MAIN (
   bool_t allbut;
   bool_t collap;
 
-  if (args_getarg(1, arg, MAXARR) > MAXARR)
+  if (args_getarg(1, arg, MAXARR) >= MAXARR)
     error("usage: translit from to");
   else if (STR_AT(arg, 1) == NOT) {
     allbut = YES; 
@@ -96,7 +96,7 @@ MAIN (
     if (makset(arg, 1, from, MAXSET) == NO)
       error("from: too large.");
   }
-  if (args_getarg(2, arg, MAXARR) > MAXARR)
+  if (args_getarg(2, arg, MAXARR) >= MAXARR)
     STR_AT(to, 1) = EOS;
   else if (makset(arg, 1, to, MAXSET) == NO)
     error("to: too large.");

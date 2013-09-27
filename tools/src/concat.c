@@ -7,7 +7,7 @@
 char name[NAMESIZE];
 
 MAIN(
-  for (size_t i = 1; args_getarg(i, name, NAMESIZE) <= NAMESIZE; ++i) {
+  for (size_t i = 1; args_getarg(i, name, NAMESIZE) < NAMESIZE; ++i) {
     FILE *fin = fopen(name, "r");
     if (fin == NULL)
       io_cant(name);

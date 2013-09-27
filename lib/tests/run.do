@@ -11,10 +11,12 @@ set -g failed 0
 
 function run
   set base (basename $argv[1])
+  echoerr -n $base:' '
   if eval $argv[1]
+    echoerr PASSED
     set passed (math $passed '+ 1')
   else
-    echoerr $base': FAILED with status '$status
+    echoerr 'FAILED with status '$status
     set failed (math $failed '+ 1')
   end 
 end

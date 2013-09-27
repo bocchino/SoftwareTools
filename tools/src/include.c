@@ -31,7 +31,7 @@ MAIN(
   ARR_AT(infile, 1) = stdin;
 
   for (size_t level = 1; level > 0; --level) {
-    while (io_getlin(line, ARR_AT(infile, level), MAXLINE) <= MAXLINE) {
+    while (io_getlin(line, ARR_AT(infile, level), MAXLINE) < MAXLINE) {
       size_t loc = 1;
       getwrd(line, &loc, str);
       if (str_equal(str, incl) == NO)

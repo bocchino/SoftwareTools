@@ -18,7 +18,7 @@ size_t io_getlin(STR const line, FILE *file, const size_t maxlen) {
   const STR const result = fgets(line, maxlen, file);
   if (result != NULL)
     return str_length(line); 
-  return maxlen + 1;
+  return maxlen;
 }
 
 void io_cant(const STR const str) {
@@ -29,7 +29,7 @@ void io_cant(const STR const str) {
 void io_fcopy(FILE *const in, FILE *const out) {
   char buf[MAXLINE];
   
-  while (io_getlin(buf, in, MAXLINE) <= MAXLINE)
+  while (io_getlin(buf, in, MAXLINE) < MAXLINE)
     io_putlin(buf, out);
 }
 

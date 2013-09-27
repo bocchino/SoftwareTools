@@ -20,8 +20,8 @@ void difmsg(size_t lineno, const STR const line1,
 size_t m1, m2;
 
 MAIN (
-  if (args_getarg(1, arg1, MAXLINE) > MAXLINE
-    || args_getarg(2, arg2, MAXLINE) > MAXLINE)
+  if (args_getarg(1, arg1, MAXLINE) >= MAXLINE
+    || args_getarg(2, arg2, MAXLINE) >= MAXLINE)
     error("usage: compare file1 file2.");
   FILE *infil1 = fopen(arg1, "r");
   if (infil1 == NULL)
@@ -33,14 +33,14 @@ MAIN (
   REPEAT {
     m1 = io_getlin(line1, infil1, MAXLINE);
     m2 = io_getlin(line2, infil2, MAXLINE);
-    if (m1 > MAXLINE || m2 > MAXLINE)
+    if (m1 >= MAXLINE || m2 >= MAXLINE)
       break;
     ++lineno;
     if (str_equal(line1, line2) == NO)
       difmsg(lineno, line1, line2);
   }
-  if (m1 > MAXLINE && m2 <= MAXLINE)
+  if (m1 >= MAXLINE && m2 < MAXLINE)
     remark("eof on file 1.");
-  else if (m2 > MAXLINE && m1 <= MAXLINE)
+  else if (m2 >= MAXLINE && m1 < MAXLINE)
     remark("eof on file 2.");
 )
