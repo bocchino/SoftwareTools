@@ -36,4 +36,9 @@ void io_cant(const STR const str);
 // ---------------------------------------------------------------------- 
 void io_fcopy(FILE *const in, FILE *const out);
 
+// ---------------------------------------------------------------------- 
+// fsize: size of file in characters
+// ---------------------------------------------------------------------- 
+size_t io_fsize(const STR const name);
+
 #endif

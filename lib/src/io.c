@@ -3,6 +3,7 @@
 // ----------------------------------------------------------------------
 
 #include "io.h"
+#include <sys/stat.h>
 
 void io_putdec(const int n, const size_t w) {
   STR_STACK(chars, MAXCHARS);
@@ -33,4 +34,9 @@ void io_fcopy(FILE *const in, FILE *const out) {
     io_putlin(buf, out);
 }
 
-
+size_t io_fsize(const STR const fname) {
+  struct stat st;
+  if (stat(fname, &st) != 0)
+    return ERR;
+  return st.st_size;
+}
