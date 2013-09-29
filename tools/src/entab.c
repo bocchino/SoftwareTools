@@ -4,12 +4,11 @@
 
 #include "st.h"
 
-MAIN (
-  int c;
-  size_t col = 1;
-  size_t newcol;
-  ARR_STACK(tabs,bool_t,MAXLINE);
+int c;
+size_t col = 1, newcol;
+bool_t tabs[MAXLINE];
 
+MAIN (
   line_settab(tabs);
   REPEAT {
     newcol = col;

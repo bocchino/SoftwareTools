@@ -4,11 +4,11 @@
 
 #include "st.h"
 
-MAIN (
-  int c;
-  size_t col = 1;
-  ARR_STACK(tabs,bool_t,MAXLINE);
+int c;
+size_t col = 1;
+bool_t tabs[MAXLINE];
 
+MAIN (
   line_settab(tabs);
   while (GETC(c) != EOF)
     if (c == TAB)

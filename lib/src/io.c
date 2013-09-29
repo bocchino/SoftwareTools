@@ -6,7 +6,7 @@
 #include <sys/stat.h>
 
 void io_putdec(const int n, const size_t w) {
-  STR_STACK(chars, MAXCHARS);
+  char chars[MAXCHARS];
 
   size_t nd = str_itoc(n, chars, MAXCHARS); 
   for (size_t i = nd + 1; i <= w; ++i)
