@@ -4,7 +4,8 @@
 # lib/tests/run.do: run all tests
 # ----------------------------------------------------------------------
 
-. defs.fish
+set -gx LEVEL ../..
+. $LEVEL/defs.fish
 
 set -g passed 0
 set -g failed 0
@@ -21,7 +22,7 @@ function run
   end 
 end
 
-for file in $BUILD/*
+for file in build/*
   run $file
 end
 

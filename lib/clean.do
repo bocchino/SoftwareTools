@@ -4,9 +4,10 @@
 # lib/clean.do: remove generated files
 # ---------------------------------------------------------------------- 
 
-. defs.fish
+set -gx LEVEL ..
+. $LEVEL/defs.fish
 
-evald rm -Rf $BUILD
+evald rm -Rf build depend
 evald rm-tmp
 
 redo tests/clean

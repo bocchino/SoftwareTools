@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
-# tools/default.do: build an executable
+# lib/tests/default.do: build an executable
 # ---------------------------------------------------------------------- 
 
-set -gx LEVEL ..
+set -gx LEVEL ../../
 . $LEVEL/defs.fish
 
 make-exec $argv

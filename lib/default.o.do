@@ -4,12 +4,14 @@
 # lib/default.o.do: build a .o file
 # ---------------------------------------------------------------------- 
 
-. defs.fish
+set -gx LEVEL ..
+. $LEVEL/defs.fish
 
 set base (basename -s '.o' $argv[1])
-set cfile $SRC/$base.c
-set dfile $DEPEND/$base.d
+set cfile src/$base.c
+set dfile depend/$base.d
+set include include
 
 redo-ifchange $cfile
-evald $CC -MD -MF $dfile $CCFLAGS -I$INCLUDE $cfile -c -o $argv[3]
+evald $CC -MD -MF $dfile $CCFLAGS -I$include $cfile -c -o $argv[3]
 redo-ifchange-d $dfile

@@ -4,7 +4,7 @@
 # tools/tests/clean.do: remove generated files
 # ----------------------------------------------------------------------
 
-. defs.fish
+set -gx LEVEL ../../
+. $LEVEL/defs.fish
 
 evald rm-tmp
-evald rm-redo

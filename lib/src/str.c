@@ -108,3 +108,12 @@ bool_t str_equal(const STR const str1, const STR const str2) {
   return NO;
 }
 
+void str_scopy(const STR const from, const int i, STR const to,
+    const int j) {
+  size_t k2 = j;
+  for (size_t k1 = i; STR_AT(from, k1) != EOS; ++k1) {
+    STR_AT(to, k2) = STR_AT(from, k1);
+    ++k2;
+  }
+  STR_AT(to, k2) = EOS;
+}

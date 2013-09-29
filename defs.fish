@@ -59,3 +59,15 @@ function rm-redo -d 'Remove redo database files'
   doall 'rm -R' .redo
 end
 
+function make-exec -d 'Build an executable file'
+  set base (basename $argv[1])
+  set cfile src/$base.c
+  set dfile depend/$base.d
+  set ofile build/$base
+  set lib $LEVEL/lib
+  set include -Iinclude -I$lib/include
+
+  redo-ifchange $cfile $lib/build/libst.a
+  evald $CC -MD -MF $dfile $CCFLAGS $include -L$lib/build -lst $cfile -o $argv[3]
+  redo-ifchange-d $dfile
+end

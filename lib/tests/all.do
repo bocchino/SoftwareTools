@@ -4,7 +4,5 @@
 # lib/tests/all.do: build and run everything
 # ----------------------------------------------------------------------
 
-. defs.fish
-
 redo-ifchange build
 redo run

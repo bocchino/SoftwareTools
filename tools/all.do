@@ -4,12 +4,15 @@
 # tools/all.do: build everything
 # ----------------------------------------------------------------------
 
-. defs.fish
+set -gx LEVEL ..
+. $LEVEL/defs.fish
 
-mkdir -p $BUILD
-mkdir -p $DEPEND
+mkdir -p build
+mkdir -p depend
 
-for file in $CFILES
+set cfiles src/*.c
+
+for file in $cfiles
   set base (basename -s '.c' $file)
-  echo $BUILD/$base
+  echo build/$base
 end | xargs redo-ifchange

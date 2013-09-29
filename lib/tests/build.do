@@ -4,14 +4,15 @@
 # lib/tests/build.do: build everything
 # ----------------------------------------------------------------------
 
-. defs.fish
+set -gx LEVEL ../../
+. $LEVEL/defs.fish
 
-mkdir -p $BUILD
+mkdir -p build
+mkdir -p depend
 
-set lib ../$BUILD
+set cfiles src/*.c
 
-for file in $CFILES
+for file in $cfiles
   set base (basename -s '.c' $file)
-  set ofile $BUILD/$base
-  evald $CC -I../include $CCFLAGS -L$lib -lst $file -o $ofile
-end
+  echo build/$base
+end | xargs redo-ifchange

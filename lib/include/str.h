@@ -61,4 +61,10 @@ bool_t str_addset(char c, STR const set, size_t *const jp,
 // ---------------------------------------------------------------------- 
 bool_t str_equal(const STR const str1, const STR const str2);
 
+// ---------------------------------------------------------------------- 
+// scopy: copy string at from(i) to to(j)
+// ---------------------------------------------------------------------- 
+void str_scopy(const STR const from, const int i, STR const to,
+    const int j);
+
 #endif
