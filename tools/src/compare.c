@@ -23,10 +23,10 @@ MAIN (
   if (args_getarg(1, arg1, MAXLINE) >= MAXLINE
     || args_getarg(2, arg2, MAXLINE) >= MAXLINE)
     error("usage: compare file1 file2.");
-  FILE *infil1 = fopen(arg1, "r");
+  FILE *infil1 = io_open(arg1, READ);
   if (infil1 == NULL)
     io_cant(arg1);
-  FILE *infil2 = fopen(arg2, "r");
+  FILE *infil2 = io_open(arg2, READ);
   if (infil2 == NULL)
     io_cant(arg2);
   size_t lineno = 0;

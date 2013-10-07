@@ -11,10 +11,10 @@ MAIN(
   if (args_getarg(1, iname, NAMESIZE) >= NAMESIZE
    || args_getarg(2, oname, NAMESIZE) >= NAMESIZE)
     error("usage: makecopy input output.");
-  fin = fopen(iname, "r");
+  fin = io_open(iname, READ);
   if (fin == NULL)
     io_cant(iname);
-  fout = fopen(oname, "w");
+  fout = io_create(oname, WRITE);
   if (fout == NULL)
     io_cant(oname);
   io_fcopy(fin, fout);

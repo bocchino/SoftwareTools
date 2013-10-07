@@ -24,7 +24,7 @@ MAIN(
         if (level > NFILES)
           error("includes nested too deeply.");
         str_getwrd(line, &loc, str);
-        ARR_AT(infile, level) = fopen(str, "r");
+        ARR_AT(infile, level) = io_open(str, READ);
         if (ARR_AT(infile, level) == NULL)
           io_cant(str);
       }

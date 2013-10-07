@@ -44,3 +44,34 @@ size_t io_fsize(const STR const fname) {
 void io_fskip(FILE *fd, const size_t n) {
   fseek(fd, n, SEEK_CUR);  
 }
+
+FILE *io_open(const STR const name, MODE mode) {
+  switch (mode) {
+    case READ:
+      return fopen(name, "r");
+      break;
+    case WRITE:
+      return fopen(name, "w");
+      break;
+    case READWRITE:
+      return fopen(name, "r+");
+      break;
+    default:
+      return NULL;
+      break;
+  }
+}
+
+FILE *io_create(const STR const name, MODE mode) {
+  switch (mode) {
+    case WRITE:
+      return fopen(name, "w");
+      break;
+    case READWRITE:
+      return fopen(name, "w+");
+      break;
+    default:
+      return NULL;
+      break;
+  }
+}

@@ -8,7 +8,7 @@ char name[NAMESIZE];
 
 MAIN(
   for (size_t i = 1; args_getarg(i, name, NAMESIZE) < NAMESIZE; ++i) {
-    FILE *fin = fopen(name, "r");
+    FILE *fin = io_open(name, READ);
     if (fin == NULL)
       io_cant(name);
     io_fcopy(fin, stdout);

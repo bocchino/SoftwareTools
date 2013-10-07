@@ -16,6 +16,12 @@
 #define PUTCH(c, fd) fputc(c, fd) 
 #define NAMESIZE MAXLINE
 
+typedef enum {
+  READ,
+  WRITE,
+  READWRITE
+} MODE;
+
 // ---------------------------------------------------------------------- 
 // putdec: put decimal integer n in field width >= w
 // ---------------------------------------------------------------------- 
@@ -47,5 +53,15 @@ size_t io_fsize(const STR const name);
 // fskip: skip n characters on file fd
 // ---------------------------------------------------------------------- 
 void io_fskip(FILE *fd, const size_t n);
+
+// ---------------------------------------------------------------------- 
+// open: open a file
+// ---------------------------------------------------------------------- 
+FILE *io_open(const STR const name, MODE mode);
+
+// ---------------------------------------------------------------------- 
+// create: create a file
+// ---------------------------------------------------------------------- 
+FILE *io_create(const STR const name, MODE mode);
 
 #endif

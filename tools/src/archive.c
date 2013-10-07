@@ -46,7 +46,7 @@ void makhdr(const STR const name, STR const head) {
 // addfil: add file "name" to archive
 // ---------------------------------------------------------------------- 
 void addfil(const STR const name, FILE *const fd) {
-  FILE *const nfd = fopen(name, "r");
+  FILE *const nfd = io_open(name, READ);
   if (nfd == NULL) {
     io_putlin(name, stderr);
     remark(": can't add.");
@@ -60,7 +60,6 @@ void addfil(const STR const name, FILE *const fd) {
     fclose(nfd);
   }
 }
-
 
 // ---------------------------------------------------------------------- 
 // gethdr: get header info from fd
@@ -93,7 +92,6 @@ bool_t filarg(const STR const name) {
     }
   return NO; 
 }
-
 
 // ---------------------------------------------------------------------- 
 // acopy: copy size characters from fdi to fdo
@@ -134,13 +132,13 @@ void replac(FILE *const afd, FILE *const tfd,
 // ---------------------------------------------------------------------- 
 void update(const STR const aname) {
   const STR const tname = "archtemp";
-  FILE *afd = fopen(aname, "r+");
+  FILE *afd = io_open(aname, READWRITE);
   if (afd == NULL)
-    afd = fopen(aname, "w+"); 
     // maybe it's a new one
+    afd = io_create(aname, READWRITE); 
   if (afd == NULL)
     io_cant(aname);
-  FILE *const tfd = fopen(tname, "w+");
+  FILE *const tfd = io_create(tname, READWRITE);
   if (tfd == NULL)
     io_cant(tname);
   // update existing  
@@ -211,7 +209,7 @@ void notfnd() {
 void table(const STR const aname) {
   char in[MAXLINE], lname[NAMESIZE];
   size_t size;
-  FILE *afd = fopen(aname, "r");
+  FILE *afd = io_open(aname, READ);
   if (afd == NULL)
     io_cant(aname);
   while (gethdr(afd, in, lname, &size) == YES) {
