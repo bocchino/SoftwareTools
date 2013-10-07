@@ -11,7 +11,9 @@
 #include "line.h"
 
 #define GETC(c) (c = getchar())
+#define GETCH(c, fd) (c = fgetc(fd))
 #define PUTC(c) putchar(c)
+#define PUTCH(c, fd) fputc(c, fd) 
 #define NAMESIZE MAXLINE
 
 // ---------------------------------------------------------------------- 
@@ -40,5 +42,10 @@ void io_fcopy(FILE *const in, FILE *const out);
 // fsize: size of file in characters
 // ---------------------------------------------------------------------- 
 size_t io_fsize(const STR const name);
+
+// ---------------------------------------------------------------------- 
+// fskip: skip n characters on file fd
+// ---------------------------------------------------------------------- 
+void io_fskip(FILE *fd, const size_t n);
 
 #endif

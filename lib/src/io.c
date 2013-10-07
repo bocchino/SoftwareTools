@@ -40,3 +40,7 @@ size_t io_fsize(const STR const fname) {
     return ERR;
   return st.st_size;
 }
+
+void io_fskip(FILE *fd, const size_t n) {
+  fseek(fd, n, SEEK_CUR);  
+}

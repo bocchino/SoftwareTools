@@ -117,3 +117,19 @@ void str_scopy(const STR const from, const int i, STR const to,
   }
   STR_AT(to, k2) = EOS;
 }
+
+size_t str_getwrd(const STR const in, size_t *i, STR const out) {
+  while (STR_AT(in, *i) == BLANK || STR_AT(in, *i) == TAB)
+    ++*i;
+  size_t j = 1;
+  while (STR_AT(in, *i) != EOS && STR_AT(in, *i) != BLANK
+      && STR_AT(in, *i) != TAB && STR_AT(in, *i) != NEWLINE) {
+    STR_AT(out, j) = STR_AT(in, *i);
+    ++*i;
+    ++j;
+  }
+  STR_AT(out, j) = EOS;
+  return j - 1;
+}
+
+

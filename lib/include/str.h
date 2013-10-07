@@ -67,4 +67,9 @@ bool_t str_equal(const STR const str1, const STR const str2);
 void str_scopy(const STR const from, const int i, STR const to,
     const int j);
 
+// ---------------------------------------------------------------------- 
+// getwrd: get non-blank word from in[*i] into out; increment *i
+// ---------------------------------------------------------------------- 
+size_t str_getwrd(const STR const in, size_t *i, STR const out);
+
 #endif
