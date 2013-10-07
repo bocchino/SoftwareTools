@@ -9,7 +9,7 @@
 typedef enum {
   UPDATE = 'u',
   TABLE = 't',
-  EXTRACT = 'e',
+  EXTRACT = 'x',
   PRINT = 'p',
   DELETE = 'd'
 } COMMAND;
@@ -220,6 +220,42 @@ void table(const STR const aname) {
   notfnd();
 }
 
+// ----------------------------------------------------------------------
+// extrac: extract files from archive
+// ----------------------------------------------------------------------
+void extrac(const STR const aname, char cmd) {
+  FILE *afd = io_open(aname, READ);
+  FILE *efd;
+  char ename[NAMESIZE], in[MAXLINE];
+  size_t size;
+  if (afd == NULL)
+    io_cant(aname);
+  if (cmd == PRINT)
+    efd = stdout;
+  else
+    efd = NULL;
+  while (gethdr(afd, in, ename, &size) == YES) {
+    if (filarg(ename) == NO)
+      io_fskip(afd, size);
+    else {
+      if (efd != stdout)
+        efd = io_create(ename, WRITE);
+      if (efd == NULL) {
+        io_putlin(ename, stderr);
+        remark(": can't create.");
+        ++errcnt;
+        io_fskip(afd, size);
+      }
+      else {
+        acopy(afd, efd, size);
+        if (efd != stdout)
+          fclose(efd);
+      }
+    }
+  }
+}
+
+
 MAIN(
   char aname[NAMESIZE];
   char command[2];
@@ -232,6 +268,9 @@ MAIN(
     update(aname);
   else if (ARR_AT(command, 1) == TABLE)
     table(aname);
+  else if (ARR_AT(command, 1) == EXTRACT ||
+    ARR_AT(command, 1) == PRINT)
+    extrac(aname, ARR_AT(command, 1)); 
   else
     help();
 
