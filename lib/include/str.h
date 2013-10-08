@@ -9,7 +9,6 @@
 #include "arr.h"
 
 #define STR_HEAP(s,n) ARR_HEAP(s,char,n+1)
-#define STR_AT(s,i) ARR_AT(s,i) 
 #define STR_BUF(name, size) char name[size+1]
 
 #define MAXCHARS 255

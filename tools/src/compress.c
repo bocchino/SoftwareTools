@@ -14,7 +14,7 @@ void putbuf() {
   if (nsave > 0) {
     PUTC(nsave);
     for (size_t i = 1; i <= nsave; ++i) {
-      PUTC(STR_AT(buf, i));
+      PUTC(ARR_AT(buf, i));
     }
   }
   nsave = 0;
@@ -33,7 +33,7 @@ MAIN (
     if (nrep < THRESH)
       for ( ; nrep > 0; --nrep) {
         ++nsave;
-        STR_AT(buf, nsave) = lastc;
+        ARR_AT(buf, nsave) = lastc;
         if (nsave >= MAXCHUNK)
           putbuf();
       }

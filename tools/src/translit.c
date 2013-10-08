@@ -21,8 +21,8 @@ static void dodash(const STR const valid, const STR const array,
   --*j;
 
   size_t limit = str_index(valid, str_esc(array, i));
-  for (size_t k = str_index(valid, STR_AT(set, *j)); k <= limit; ++k)
-      str_addset(STR_AT(valid, k), set, j, maxset);
+  for (size_t k = str_index(valid, ARR_AT(set, *j)); k <= limit; ++k)
+      str_addset(ARR_AT(valid, k), set, j, maxset);
 }
 
 // ---------------------------------------------------------------------- 
@@ -30,19 +30,19 @@ static void dodash(const STR const valid, const STR const array,
 // ---------------------------------------------------------------------- 
 static void filset(const char delim, const STR const array, size_t *const i,
     STR const set, size_t *const j, const size_t maxset) {
-  for ( ; STR_AT(array, *i) != delim && STR_AT(array, *i) != EOS; ++*i)
-   if (STR_AT(array, *i) == ESCAPE)
+  for ( ; ARR_AT(array, *i) != delim && ARR_AT(array, *i) != EOS; ++*i)
+   if (ARR_AT(array, *i) == ESCAPE)
      str_addset(str_esc(array, i), set, j, maxset);
-   else if (STR_AT(array, *i) != DASH)
-     str_addset(STR_AT(array, *i), set, j, maxset);
-   else if (*j <= 1 || STR_AT(array, (*i)+1) == EOS)
+   else if (ARR_AT(array, *i) != DASH)
+     str_addset(ARR_AT(array, *i), set, j, maxset);
+   else if (*j <= 1 || ARR_AT(array, (*i)+1) == EOS)
      // literal DASH
      str_addset(DASH, set, j, maxset);
-   else if (str_index(digits, STR_AT(set, (*j)-1)) > 0)
+   else if (str_index(digits, ARR_AT(set, (*j)-1)) > 0)
      dodash(digits, array, i, set, j, maxset);
-   else if (str_index(lowalf, STR_AT(set, (*j)-1)) > 0)
+   else if (str_index(lowalf, ARR_AT(set, (*j)-1)) > 0)
      dodash(lowalf, array, i, set, j, maxset);
-   else if (str_index(upalf, STR_AT(set, (*j)-1)) > 0)
+   else if (str_index(upalf, ARR_AT(set, (*j)-1)) > 0)
      dodash(upalf, array, i, set, j, maxset);
    else
      str_addset(DASH, set, j, maxset); 
@@ -86,7 +86,7 @@ MAIN (
 
   if (args_getarg(1, arg, MAXARR) >= MAXARR)
     error("usage: translit from to");
-  else if (STR_AT(arg, 1) == NOT) {
+  else if (ARR_AT(arg, 1) == NOT) {
     allbut = YES; 
     if (makset(arg, 2, from, MAXSET) == NO)
       error("from: to large.");
@@ -97,7 +97,7 @@ MAIN (
       error("from: too large.");
   }
   if (args_getarg(2, arg, MAXARR) >= MAXARR)
-    STR_AT(to, 1) = EOS;
+    ARR_AT(to, 1) = EOS;
   else if (makset(arg, 1, to, MAXSET) == NO)
     error("to: too large.");
 
@@ -110,7 +110,7 @@ MAIN (
     size_t i = str_xindex(from, GETC(c), allbut, lastto);
     if (collap == YES && i >= lastto && lastto > 0) {
       // collapse
-      PUTC(STR_AT(to, lastto));
+      PUTC(ARR_AT(to, lastto));
       do
         i = str_xindex(from, GETC(c), allbut, lastto);
       UNTIL (i < lastto);
@@ -119,7 +119,7 @@ MAIN (
       break;
     if (i > 0 && lastto > 0)
       // translate
-      PUTC(STR_AT(to, i));
+      PUTC(ARR_AT(to, i));
     else if (i == 0)
       // copy
       PUTC(c);

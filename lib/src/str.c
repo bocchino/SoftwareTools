@@ -67,19 +67,19 @@ int str_ctoi(const STR in, size_t *ip) {
 char str_esc(const STR const array, size_t *const ip) {
   size_t i = *ip; 
   char result;
-  if (STR_AT(array, i) != ESCAPE)
-    result = STR_AT(array, i);
-  else if (STR_AT(array, i+1) == EOS)
+  if (ARR_AT(array, i) != ESCAPE)
+    result = ARR_AT(array, i);
+  else if (ARR_AT(array, i+1) == EOS)
     // ESCAPE not special at end
     result = ESCAPE;
   else {
     ++i;
-    if (STR_AT(array, i) == LETN)
+    if (ARR_AT(array, i) == LETN)
       result = NEWLINE;
-    else if (STR_AT(array, i) == LETT)
+    else if (ARR_AT(array, i) == LETT)
       result = TAB;
     else
-      result = STR_AT(array, i);
+      result = ARR_AT(array, i);
   }
   *ip = i;
   return result;
@@ -93,7 +93,7 @@ bool_t str_addset(char c, STR const set, size_t *const jp,
   if (j > maxsiz)
     result = NO;
   else {
-    STR_AT(set, j) = c;
+    ARR_AT(set, j) = c;
     ++j;
     result = YES;
   } 
@@ -102,8 +102,8 @@ bool_t str_addset(char c, STR const set, size_t *const jp,
 }
 
 bool_t str_equal(const STR const str1, const STR const str2) {
-  for (size_t i = 1; STR_AT(str1, i) == STR_AT(str2, i); ++i)
-    if (STR_AT(str1, i) == EOS)
+  for (size_t i = 1; ARR_AT(str1, i) == ARR_AT(str2, i); ++i)
+    if (ARR_AT(str1, i) == EOS)
       return YES;
   return NO;
 }
@@ -111,24 +111,24 @@ bool_t str_equal(const STR const str1, const STR const str2) {
 void str_scopy(const STR const from, const int i, STR const to,
     const int j) {
   size_t k2 = j;
-  for (size_t k1 = i; STR_AT(from, k1) != EOS; ++k1) {
-    STR_AT(to, k2) = STR_AT(from, k1);
+  for (size_t k1 = i; ARR_AT(from, k1) != EOS; ++k1) {
+    ARR_AT(to, k2) = ARR_AT(from, k1);
     ++k2;
   }
-  STR_AT(to, k2) = EOS;
+  ARR_AT(to, k2) = EOS;
 }
 
 size_t str_getwrd(const STR const in, size_t *i, STR const out) {
-  while (STR_AT(in, *i) == BLANK || STR_AT(in, *i) == TAB)
+  while (ARR_AT(in, *i) == BLANK || ARR_AT(in, *i) == TAB)
     ++*i;
   size_t j = 1;
-  while (STR_AT(in, *i) != EOS && STR_AT(in, *i) != BLANK
-      && STR_AT(in, *i) != TAB && STR_AT(in, *i) != NEWLINE) {
-    STR_AT(out, j) = STR_AT(in, *i);
+  while (ARR_AT(in, *i) != EOS && ARR_AT(in, *i) != BLANK
+      && ARR_AT(in, *i) != TAB && ARR_AT(in, *i) != NEWLINE) {
+    ARR_AT(out, j) = ARR_AT(in, *i);
     ++*i;
     ++j;
   }
-  STR_AT(out, j) = EOS;
+  ARR_AT(out, j) = EOS;
   return j - 1;
 }
 

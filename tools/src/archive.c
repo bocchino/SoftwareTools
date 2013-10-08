@@ -35,13 +35,13 @@ void help() {
 void makhdr(const STR const name, STR const head) {
   str_scopy(hdr, 1, head, 1);
   size_t i = str_length(hdr) + 1;
-  STR_AT(head, i) = BLANK;
+  ARR_AT(head, i) = BLANK;
   str_scopy(name, 1, head, i + 1);
   i = str_length(head) + 1;
-  STR_AT(head, i) = BLANK;
-  i = i + 1 + str_itoc(io_fsize(name), &STR_AT(head, i+1), MAXCHARS);
-  STR_AT(head, i) = NEWLINE;
-  STR_AT(head, i+1) = EOS;
+  ARR_AT(head, i) = BLANK;
+  i = i + 1 + str_itoc(io_fsize(name), &ARR_AT(head, i+1), MAXCHARS);
+  ARR_AT(head, i) = NEWLINE;
+  ARR_AT(head, i+1) = EOS;
 }
 
 // ---------------------------------------------------------------------- 
@@ -197,7 +197,7 @@ void tprint(const STR const buf) {
 void notfnd() {
   for (size_t i = 1; i <= nfiles; ++i) {
     if (ARR_AT(fstat,i) == NO) {
-      io_putlin(STR_AT(fname, i), stderr);
+      io_putlin(ARR_AT(fname, i), stderr);
       remark(": not in archive.");
       ++errcnt;
     }
