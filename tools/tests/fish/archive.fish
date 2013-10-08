@@ -21,13 +21,17 @@ rm -f fish/arch
 diff fish/arch fish/arch.ref
 if test $status -ne 0; exit 1; end
 
+for f in $fs
+  rm $f
+end
+
 # test table
 ../build/archive t fish/arch > fish/table
 diff fish/table fish/table.ref
 if test $status -ne 0; exit 2; end
 
 # test extract
-../build/archive t fish/arch fish/f1
+../build/archive x fish/arch fish/f1
 diff fish/f1 fish/f1.in
 if test $status -ne 0; exit 3; end 
 
