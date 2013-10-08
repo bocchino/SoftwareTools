@@ -43,8 +43,7 @@ Ratfor) as closely as possible, while writing in C.  For example:
 
 I have used C macros to assist the translation process.
 
-Personally I am enjoying the one-indexed arrays and lack of pointers. I find
-this coding style more natural for programs that don't require pointer
+I find this coding style natural for programs that don't require pointer
 manipulation.
 
 ## 3. Building and Running ##
