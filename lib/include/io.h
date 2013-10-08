@@ -40,6 +40,11 @@ size_t io_getlin(STR const line, FILE *file, const size_t maxlen);
 void io_cant(const STR const str);
 
 // ---------------------------------------------------------------------- 
+// amove: move name1 to name2
+// ---------------------------------------------------------------------- 
+#define io_amove(name1, name2) rename(name1, name2)
+
+// ---------------------------------------------------------------------- 
 // fcopy: copy file in to file out
 // ---------------------------------------------------------------------- 
 void io_fcopy(FILE *const in, FILE *const out);

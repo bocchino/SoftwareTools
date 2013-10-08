@@ -6,6 +6,8 @@
 
 #define MAXFILES 10
 
+const STR const tname = "archtemp";
+
 typedef enum {
   UPDATE = 'u',
   TABLE = 't',
@@ -131,7 +133,6 @@ void replac(FILE *const afd, FILE *const tfd,
 // update: update existing files, add new ones at end
 // ---------------------------------------------------------------------- 
 void update(const STR const aname) {
-  const STR const tname = "archtemp";
   FILE *afd = io_open(aname, READWRITE);
   if (afd == NULL)
     // maybe it's a new one
@@ -152,7 +153,7 @@ void update(const STR const aname) {
   fclose(afd);
   fclose(tfd);
   if (errcnt == 0)
-    rename(tname, aname);
+    io_amove(tname, aname);
   else
     remark("fatal errors -- archive not altered.");
   remove(tname);
@@ -255,6 +256,31 @@ void extrac(const STR const aname, char cmd) {
   }
 }
 
+// ----------------------------------------------------------------------
+// delete: delete files from archive
+// ----------------------------------------------------------------------
+void delete(const STR const aname) {
+  char in[MAXLINE];
+
+  if (nfiles <= 0)
+    // protect innocents
+    error("delete by name only.");
+  FILE *afd = io_open(aname, READWRITE);
+  if (afd == NULL)
+    io_cant(aname);
+  FILE *tfd = io_create(tname, READWRITE);
+  if (tfd == NULL)
+    io_cant(tname);
+  replac(afd, tfd, DELETE);
+  notfnd();
+  fclose(afd);
+  fclose(tfd);
+  if (errcnt == 0)
+    io_amove(tname, aname);
+  else
+    remark("fatal errors -- archive not altered.");
+  remove(tname);
+}
 
 MAIN(
   char aname[NAMESIZE];
@@ -271,6 +297,8 @@ MAIN(
   else if (ARR_AT(command, 1) == EXTRACT ||
     ARR_AT(command, 1) == PRINT)
     extrac(aname, ARR_AT(command, 1)); 
+  else if (ARR_AT(command, 1) == DELETE)
+    delete(aname);
   else
     help();
 
