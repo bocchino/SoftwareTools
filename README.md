@@ -8,7 +8,8 @@ SoftwareTools
 This is an implementation in C of the programs in the classic text [*Software
 Tools*](http://www.amazon.com/Software-Tools-Brian-W-Kernighan/dp/020103669X)
 by Brian W. Kernighan and P.J. Plauger (Addison-Wesley 1976). So far I have
-implemented the programs from the first two chapters.
+implemented the programs from the first three chapters, except for the programs
+that drive line printers.
 
 ## 2. Code Organization and Style ##
 
